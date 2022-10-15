@@ -1,0 +1,78 @@
+<head>
+
+ <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+
+
+ <style>
+    .bg-gray {
+      background-color:#24292f;
+    }
+
+    .login {
+
+      margin-left:65%;
+      margin-top:10px;
+    }
+
+    @media only screen and (max-device-width: 480px) {
+    .login {
+      margin:auto
+    }
+}
+ </style>
+</head>
+
+<body>
+
+
+    <nav class="navbar navbar-default bg-gray flex-right">
+        <div class="container-fluid">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/"><%= data.name %></a>
+          </div>
+      
+          <div class="navbar-collapse">
+
+            <% data.navigation.forEach(x => { %>
+            <ul class="nav navbar-nav m-2">
+              <li><a href="<%= x.href %>"> <%= x.name %></a></li>
+            </ul>
+           
+
+            <% }) %>
+            <% if(user){ %>
+
+     <a href="/logout"  class="btn btn-primary login"> <%= user.username %># <%= user.discriminator %> </a>
+
+    
+            <% }else{ %>
+      <a href="/login"  class="btn btn-primary login"> Login </a>
+
+
+      <% } %>
+          
+          </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+      </nav>
+
+
+
+
+
+
+
+
+
+
+      <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+      <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
+      <!-- Include all compiled plugins (below), or include individual files as needed -->
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+</body>

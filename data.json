@@ -1,0 +1,39 @@
+{
+    "name" :"PARAS DEV",
+
+    "home": [
+     {   "title":"YOUR BOT NAME",
+        "description":"Take advantage of the welcome message to inform newcomers about your server rules, topic, or ongoing events. You can design your own welcome card or keep it simple.",
+        "image":"https://cdn.discordapp.com/attachments/936876336591564850/1017105206690988192/Code_typing-cuate.png"
+    },
+     {
+        "title":"Auto Moderation",
+        "description":"Discord moderation and security that is always one step ahead",
+        "image":"https://cdn.discordapp.com/attachments/936876336591564850/1017107000808714280/Top_secret-amico.png"
+     }
+    ],
+
+
+
+
+
+
+
+
+    "navigation":[
+
+        {
+            "name":"Commands",
+            "href":"/commands"
+        },
+        {
+            "name":"premium",
+            "href":"/premium"
+        },
+        {
+            "name":"invite",
+            "href":"/invite"
+        }
+    ]
+}
+

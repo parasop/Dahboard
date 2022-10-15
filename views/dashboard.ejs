@@ -1,0 +1,55 @@
+<head>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+   
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.84.0">
+    <title><%= data.name %></title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/heroes/">
+<style>
+
+    .guild{
+        margin-top: 20px;
+        margin-bottom:10px;
+        padding: 10px;
+    }
+    .image{
+        width: 200px;
+        height: 200px;
+    }
+</style>
+   </head>
+   
+   <body class="p-3 mb-2 bg-dark text-white">
+    <%- include("../components/NavBar.ejs") -%>
+
+
+
+
+<div class=" flex flex-row container " >
+
+<% guilds.forEach(guild => { %>
+    <div class="col-xs-6  p-2 m-4 col-md-3 mt-4 guild">
+     <img  src="https://cdn.discordapp.com/icons/<%= guild.id %>/<%= guild.icon %>" class="card-img-top image" alt="...">
+    <div class="card-body">
+      <h5 class="card-title"><%= guild.name %></h5>
+   <% if(bot.guilds.cache.get(guild.id)){ %>
+      <a href="/dashboard/<%= guild.id %>" class="btn btn-primary">Go</a>
+
+ <%  }else{%>
+
+    <a href="<%= config.invite %>" class="btn btn-primary">Setup</a>
+
+
+<%} %>
+    </div>
+  </div>
+  <% }) %>
+  
+</div>
+
+   </body>

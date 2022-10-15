@@ -1,0 +1,63 @@
+<head>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+   
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.84.0">
+    <title><%= data.name %></title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/heroes/">
+
+   </head>
+   
+   <body class="p-3 mb-2 bg-dark text-white">
+
+
+    
+
+
+
+
+
+<%- include("../components/NavBar.ejs") -%>
+
+
+   <br> <br><br><br>
+    <div class="container my-5 bg-dark">
+        <div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg">
+          <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
+
+
+            <!--don't know what  is data.name?  data is object that comes from data.json  so there data.name is
+            paras dev as you can see-->
+            <h1 class="display-4 fw-bold lh-1"><%= data.home[0].title %></h1>
+            <p class="lead"> <%= data.home[0].description %></p>
+            <div class="d-grid gap-2 d-md-flex justify-content-md-start mb-4 mb-lg-3">
+              <button type="button" class="btn btn-primary btn-lg px-4 me-md-2 fw-bold">Invite Now </button>
+              <button type="button" class="btn btn-outline-secondary btn-lg px-4">ask for support</button>
+            </div>
+          </div>
+          <div class="col-lg-4 offset-lg-1 p-0 overflow-hidden shadow-lg">
+              <img class="rounded-lg-3" src="<%= data.home[0].image %>" alt="" width="500" height="500">
+          </div>
+        </div>
+      </div>
+    
+    
+
+      <div class="container col-xxl-8 px-4 py-5 mt-auto">
+        <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+          <div class="col-10 col-sm-8 col-lg-6">
+            <img src="<%= data.home[1].image %>" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="400" height="400" loading="lazy">
+          </div>
+          <div class="col-lg-6">
+            <h1 class="display-5 fw-bold lh-1 mb-3"><%= data.home[1].title %></h1>
+            <p class="lead"><%= data.home[1].description %></p>
+             </div>
+        </div>
+      </div>
+    
+   </body>
